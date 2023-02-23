@@ -1,7 +1,8 @@
-for i in range(1,83):
+    # _wav_file_ = 'C://Users//hp//Desktop//Adi_college//Mini Project_TE//archive//'+(f)+'.wav'
+for i in range(0,2):
     n = i
     f = str(n)
-    _wav_file_ = 'C://Users//hp//Desktop//Adi_college//Mini Project_TE//archive//'+(f)+'.wav'
+    _wav_file_ = 'C://Users//hp//Desktop//Adi_college//Mini Project_TE//archive//test_adi.wav'
 
 
     def mel_sepc_librosa(_wav_file_):
@@ -10,10 +11,15 @@ for i in range(1,83):
         import pylab
 
         (sigg,rate) = librosa.load(_wav_file_, sr=None, mono=True,  dtype=np.float32)
+        print(sigg)
+        print(rate)
         pylab.specgram(sigg,Fs=rate)
         pylab.savefig('mel_spectrogram_'+(f)+'.png')
 
     mel_sepc_librosa(_wav_file_)
+
+
+#some extrafucntions for similar sort of outputs 
 
 def spectogram_librosa(_wav_file_):
     import librosa
@@ -24,6 +30,8 @@ def spectogram_librosa(_wav_file_):
     (sigg, rt) = librosa.feature.melspectrogram(_wav_file_, sr = None, mono = True, dtype=np.float32) 
     pylab.specgram(sig, Fs=rate)
     pylab.savefig('mel_spectrogram_67.png')
+
+
 def graph_spectrogram_wave(wav_file):
     import wave
     import pylab
@@ -39,6 +47,8 @@ def graph_spectrogram_wave(wav_file):
     pylab.title('spectrogram pylab with wav_file')
     pylab.specgram(sound_info, Fs=frame_rate)
     pylab.savefig('spectrogram{i}.png')
+
+
 def graph_wavfileread(_wav_file_):
     import matplotlib.pyplot as plt
     from scipy import signal

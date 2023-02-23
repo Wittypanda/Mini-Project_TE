@@ -1,0 +1,2 @@
+Made a UI for taking input from the user
+Studying about mood and music co relation 
